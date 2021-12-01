@@ -24,6 +24,7 @@ public class Trigger : MonoBehaviour
     {
         if (!this.isTriggered && CanTrip(collision))
         {
+            Debug.Log("Trigger triggered and fired");
             FireTrigger();
         }
     }
@@ -32,13 +33,14 @@ public class Trigger : MonoBehaviour
     {
         foreach (Collider col in canTripColliders)
         {
-            if (col == collision) { return true; }
+            if (col.tag == "Player") { return true; }
         }
         return false;
     }
 
     protected virtual void FireTrigger()
     {
+        Debug.Log("Trigger Fired");
         bool hasChanged = IsTriggered == false;
         this.isTriggered = true;
     }

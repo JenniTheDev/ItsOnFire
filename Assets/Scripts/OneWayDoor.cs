@@ -2,17 +2,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class OpenOnlyDoor : MonoBehaviour, ITriggerable
+public class OneWayDoor : Door, ITriggerable
 {
     [SerializeField] private bool doorStartPosition;
-    private float delay = 0.5f;
 
     private void Awake()
     {
         gameObject.SetActive(doorStartPosition);
     }
 
-    public void OpenDoor()
+    protected override void OpenDoor()
     {
         gameObject.SetActive(!doorStartPosition);
     }
