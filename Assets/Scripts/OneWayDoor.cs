@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OneWayDoor : Door, ITriggerable
 {
-    [SerializeField] private bool doorStartPosition;
+    [SerializeField] private bool doorStartPosition = true;
 
     private void Awake()
     {
@@ -13,7 +13,8 @@ public class OneWayDoor : Door, ITriggerable
 
     protected override void OpenDoor()
     {
-        gameObject.SetActive(!doorStartPosition);
+        // gameObject.SetActive(!doorStartPosition);
+        gameObject.SetActive(false);
     }
 
     public void TriggerExecute()
