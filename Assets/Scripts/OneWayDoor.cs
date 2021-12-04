@@ -19,7 +19,7 @@ public class OneWayDoor : Door, ITriggerable
 
     public void TriggerExecute()
     {
-        Debug.Log(" Trigger execute called");
+        Debug.Log(" Trigger execute called on Door");
         OpenDoor();
     }
 

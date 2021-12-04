@@ -7,6 +7,7 @@ public class DelayDoor : Door, ITriggerable
 
     protected override void OpenDoor()
     {
+        Debug.Log("Open Door Called");
         StartCoroutine(OpenAfterDelay());
     }
 

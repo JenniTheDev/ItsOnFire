@@ -10,10 +10,13 @@ public class Spawner : MonoBehaviour
     private int spawnLimit = 20;
     private float spawnRate = 1.5f;
     private float spawnTimer;
+    private Vector3 center;
+    private float drawTime = 1;
     [SerializeField] private Collider playingArea;
 
     private void Start()
     {
+        center = new Vector3(0, 1, 0);
         spawnTimer = spawnRate;
     }
 
@@ -38,6 +41,8 @@ public class Spawner : MonoBehaviour
         Vector3 spawn = playingArea.bounds.center;
         spawn.x = Random.Range(playingArea.bounds.min.x, playingArea.bounds.max.x);
         spawn.z = Random.Range(playingArea.bounds.min.z, playingArea.bounds.max.z);
+
+        Debug.DrawLine(Vector3.up, spawn, Color.magenta, drawTime);
         return spawn;
     }
 }
