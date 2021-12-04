@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
         spawn.x = Random.Range(playingArea.bounds.min.x, playingArea.bounds.max.x);
         spawn.z = Random.Range(playingArea.bounds.min.z, playingArea.bounds.max.z);
 
-        Debug.DrawLine(Vector3.up, spawn, Color.magenta, drawTime);
+       // Debug.DrawLine(Vector3.up, spawn, Color.magenta, drawTime);
         return spawn;
     }
 }
