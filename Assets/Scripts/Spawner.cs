@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     private int numberToSpawn = 1;
     private int spawnLimit = 20;
     private float spawnRate = 1.5f;
-    private float spawnTimer;
+    private float spawnDelayTimer;
     private Vector3 center;
     private float drawTime = 1;
     [SerializeField] private Collider playingArea;
@@ -17,21 +17,21 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         center = new Vector3(0, 1, 0);
-        spawnTimer = spawnRate;
+        spawnDelayTimer = spawnRate;
     }
 
     private void Update()
     {
         if (ballContainer.childCount < spawnLimit)
         {
-            spawnTimer -= Time.deltaTime;
-            if (spawnTimer <= 0f)
+            spawnDelayTimer -= Time.deltaTime;
+            if (spawnDelayTimer <= 0f)
             {
                 for (int i = 0; i < numberToSpawn; i++)
                 {
                     Instantiate(objectToSpawn, GetSpawnLocation(), Quaternion.identity, ballContainer);
                 }
-                spawnTimer = spawnRate;
+                spawnDelayTimer = spawnRate;
             }
         }
     }
@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
         spawn.x = Random.Range(playingArea.bounds.min.x, playingArea.bounds.max.x);
         spawn.z = Random.Range(playingArea.bounds.min.z, playingArea.bounds.max.z);
 
-       // Debug.DrawLine(Vector3.up, spawn, Color.magenta, drawTime);
+        Debug.DrawLine(Vector3.up, spawn, Color.magenta, drawTime);
         return spawn;
     }
 }

@@ -8,8 +8,8 @@ public class ObstacleManager : MonoBehaviour
     [SerializeField] private float spawnDelayTime = 0.1f;
     [SerializeField] private Transform obstacleContainer;
     [SerializeField] private Collider spawnArea;
-    //[SerializeField] private int maxObstacles;
-    private int maxObstacles;
+    [SerializeField] private int maxObstacles;
+    // private int maxObstacles;
     private int obstacleToSpawn;
     
     private LayerMask playerLayer;
