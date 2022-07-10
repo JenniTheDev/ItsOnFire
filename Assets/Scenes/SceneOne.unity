@@ -1916,7 +1916,6 @@ MonoBehaviour:
   spawnDelayTime: 0.5
   obstacleContainer: {fileID: 1144417102}
   spawnArea: {fileID: 983129463}
-  maxObstacles: 0
 --- !u!4 &1722501384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 490576248761790154, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
@@ -2151,7 +2150,6 @@ MonoBehaviour:
   spawnDelayTime: 0.5
   obstacleContainer: {fileID: 1144417102}
   spawnArea: {fileID: 983129463}
-  maxObstacles: 10
 --- !u!1001 &1765236150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2593,7 +2591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2131055844
 Transform:
   m_ObjectHideFlags: 0
