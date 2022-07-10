@@ -7,6 +7,7 @@ public class Trigger : MonoBehaviour, ITriggerable
     [SerializeField] private bool isTriggered;
     [SerializeField] private Collider[] canTripColliders;
     private LayerMask playerLayer;
+    [SerializeField] private GameObject doorToClose;
 
     public bool IsTriggered
     {
@@ -44,6 +45,7 @@ public class Trigger : MonoBehaviour, ITriggerable
     {
         Debug.Log("Trigger Executed");
         this.isTriggered = true;
+        doorToClose.SetActive(false);
     }
 
     public void TriggerRelease()

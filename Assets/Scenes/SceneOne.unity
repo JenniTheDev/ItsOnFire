@@ -350,6 +350,7 @@ MonoBehaviour:
   isTriggered: 0
   canTripColliders:
   - {fileID: 916739042}
+  doorToClose: {fileID: 1179487831}
 --- !u!4 &260535679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8249037810867517720, guid: 8cec75176ea4bf34c804e25ec6959d9d, type: 3}
@@ -1970,6 +1971,7 @@ MonoBehaviour:
   isTriggered: 0
   canTripColliders:
   - {fileID: 916739042}
+  doorToClose: {fileID: 761239}
 --- !u!65 &1745050197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2510,6 +2512,7 @@ MonoBehaviour:
   isTriggered: 0
   canTripColliders:
   - {fileID: 916739042}
+  doorToClose: {fileID: 761239}
 --- !u!1001 &2105510793
 PrefabInstance:
   m_ObjectHideFlags: 0
