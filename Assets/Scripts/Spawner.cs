@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     private int spawnLimit = 20;
     private float spawnRate = 1.5f;
     private float spawnDelayTimer;
+    private float drawTime = 4f;
     private Vector3 center;
 
     // private float drawTime = 1;
