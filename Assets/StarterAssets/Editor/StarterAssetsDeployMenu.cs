@@ -1,8 +1,11 @@
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+
 #if STARTER_ASSETS_PACKAGES_CHECKED
+
 using Cinemachine;
+
 #endif
 
 namespace StarterAssets
@@ -14,6 +17,7 @@ namespace StarterAssets
 
         // prefab names
         private const string MainCameraPrefabName = "MainCamera";
+
         private const string PlayerCapsulePrefabName = "PlayerCapsule";
 
         // names in hierarchy
@@ -21,10 +25,11 @@ namespace StarterAssets
 
         // tags
         private const string PlayerTag = "Player";
+
         private const string MainCameraTag = "MainCamera";
         private const string CinemachineTargetTag = "CinemachineTarget";
 
-        // Get the path to the template prefabs 
+        // Get the path to the template prefabs
         private static string StarterAssetsPath => PathToThisFile;
 
         private static GameObject _cinemachineVirtualCamera;
@@ -60,12 +65,13 @@ namespace StarterAssets
         /// See Assets/Editor/PackageChecker/PackageChecker.cs for more information
         /// </summary>
         [MenuItem(MenuRoot + "/Reinstall Dependencies", false)]
-        static void ResetPackageChecker()
+        private static void ResetPackageChecker()
         {
             ScriptingDefineUtils.RemoveScriptingDefine(PackageChecker.PackageCheckerScriptingDefine);
         }
 
 #if STARTER_ASSETS_PACKAGES_CHECKED
+
         private static void CheckCameras(string prefabPath, Transform targetParent)
         {
             CheckMainCamera(prefabPath);
@@ -127,7 +133,7 @@ namespace StarterAssets
 
         private static void HandleInstantiatingPrefab(string path, string prefabName, out GameObject prefab)
         {
-            prefab = (GameObject) PrefabUtility.InstantiatePrefab(
+            prefab = (GameObject)PrefabUtility.InstantiatePrefab(
                 AssetDatabase.LoadAssetAtPath<Object>($"{path}{prefabName}.prefab"));
             Undo.RegisterCreatedObjectUndo(prefab, "Instantiate Starter Asset Prefab");
 
@@ -135,6 +141,7 @@ namespace StarterAssets
             prefab.transform.localEulerAngles = Vector3.zero;
             prefab.transform.localScale = Vector3.one;
         }
+
 #endif
     }
 }

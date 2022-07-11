@@ -6,11 +6,11 @@ using Variables;
 public class HealthPoints : MonoBehaviour
 {
     [SerializeField] private int currentHealthPoints;
-    [SerializeField] private IntVariable maxHealthPoints;
+    public IntVariable MaxHealthPoints;
 
     private void Awake()
     {
-        currentHealthPoints = maxHealthPoints.IntValue;
+        currentHealthPoints = MaxHealthPoints.IntValue;
     }
 
     private void Update()

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealthPoints: 0
-  maxHealthPoints: {fileID: 11400000, guid: 2ebef582580cc2048b49c8f31d88ca96, type: 2}
+  MaxHealthPoints: {fileID: 11400000, guid: 2ebef582580cc2048b49c8f31d88ca96, type: 2}
 --- !u!1 &7141201810404855733
 GameObject:
   m_ObjectHideFlags: 0
