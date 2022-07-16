@@ -5,6 +5,7 @@ using UnityEngine.TestTools;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Variables;
+using Cinemachine;
 
 public class PracticeTests
 {
@@ -29,8 +30,20 @@ public class PracticeTests
     [Test]
     public void CheckPlayersIsCreated()
     {
-        var player = SpawnPlayer();
-        Assert.That(player, Is.Not.Null);
+        // var player = SpawnPlayer();
+        Assert.That(playerPrefab, Is.Not.Null);
+    }
+
+    [Test]
+    public void CheckCharacterForAllParts()
+    {
+        Assert.That(playerPrefab.GetComponentInChildren<CinemachineVirtualCamera>()?.VirtualCameraGameObject, Is.Not.Null, "Virtual camera is null");
+
+        Assert.That(playerPrefab.GetComponentInChildren<CinemachineBrain>(), Is.Not.Null, "Cinemachine Brain is missing.");
+
+        Assert.That(playerPrefab.GetComponentInChildren<AudioListener>(), Is.Not.Null, "Audio listener missing.");
+
+        Assert.That(playerPrefab.GetComponentInChildren<Animator>, Is.Not.Null, "Animator is missing.");
     }
 
     [Test]
@@ -47,8 +60,6 @@ public class PracticeTests
         // assert that max health SO is equal to the Characters currentHealth
         // Assert.IsTrue((player.GetComponent<HealthPoints>().MaxHealthPoints?.IntValue ?? 0) == maxHealth.IntValue);
         Assert.IsTrue(player.GetComponent<HealthPoints>().MaxHealthPoints?.IntValue == maxHealth.IntValue);
-        // How do I get reference to a SO's value?
-        // Assert.That(player.GetComponent<Character>().HealthPoints, Is.EqualTo(maxHealth);
     }
 
     [Test]
