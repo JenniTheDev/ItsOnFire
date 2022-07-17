@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Variables;
 
+[RequireComponent(typeof(IntVariable))]
 public class Goal : MonoBehaviour
 {
     [SerializeField] private AudioClip winSound;
     [SerializeField] private AudioSource soundPlayer;
+    [SerializeField] private IntVariable score;
+    [SerializeField] private IntVariable goalPoints;
     private LayerMask ballLayer;
 
     private void Start()
@@ -17,7 +21,7 @@ public class Goal : MonoBehaviour
     {
         if (other.gameObject.layer == ballLayer)
         {
-            // Debug.Log("Play sound");
+            score.IntValue = score.IntValue + goalPoints.IntValue;
             soundPlayer.clip = winSound;
             soundPlayer.Play();
         }

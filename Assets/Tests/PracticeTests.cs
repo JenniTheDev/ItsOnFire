@@ -30,7 +30,6 @@ public class PracticeTests
     [Test]
     public void CheckPlayersIsCreated()
     {
-        // var player = SpawnPlayer();
         Assert.That(playerPrefab, Is.Not.Null);
     }
 
@@ -44,6 +43,8 @@ public class PracticeTests
         Assert.That(playerPrefab.GetComponentInChildren<AudioListener>(), Is.Not.Null, "Audio listener missing.");
 
         Assert.That(playerPrefab.GetComponentInChildren<Animator>, Is.Not.Null, "Animator is missing.");
+
+        Assert.That(playerPrefab.GetComponentInChildren<StarterAssets.ThirdPersonController>(), Is.Not.Null, "Third Person Controller is missing.");
     }
 
     [Test]

@@ -24,6 +24,21 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
+        CheckAndSpawnBalls();
+    }
+
+    private Vector3 GetSpawnLocation()
+    {
+        Vector3 spawn = playingArea.bounds.center;
+        spawn.x = Random.Range(playingArea.bounds.min.x, playingArea.bounds.max.x);
+        spawn.z = Random.Range(playingArea.bounds.min.z, playingArea.bounds.max.z);
+
+        Debug.DrawLine(Vector3.up, spawn, Color.magenta, drawTime);
+        return spawn;
+    }
+
+    private void CheckAndSpawnBalls()
+    {
         if (ballContainer.childCount < spawnLimit)
         {
             spawnDelayTimer -= Time.deltaTime;
@@ -36,15 +51,5 @@ public class Spawner : MonoBehaviour
                 spawnDelayTimer = spawnRate;
             }
         }
-    }
-
-    private Vector3 GetSpawnLocation()
-    {
-        Vector3 spawn = playingArea.bounds.center;
-        spawn.x = Random.Range(playingArea.bounds.min.x, playingArea.bounds.max.x);
-        spawn.z = Random.Range(playingArea.bounds.min.z, playingArea.bounds.max.z);
-
-        Debug.DrawLine(Vector3.up, spawn, Color.magenta, drawTime);
-        return spawn;
     }
 }
