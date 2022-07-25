@@ -13,7 +13,6 @@ public class Spawner : MonoBehaviour
     private float drawTime = 4f;
     private Vector3 center;
 
-    // private float drawTime = 1;
     [SerializeField] private Collider playingArea;
 
     private void Start()
@@ -52,4 +51,6 @@ public class Spawner : MonoBehaviour
             }
         }
     }
+
+    // make a random spawner, check for random? Make dependent on level
 }
